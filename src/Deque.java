@@ -1,5 +1,5 @@
 public class Deque extends Queue{
-    private final static int DEFSIZE = 16;
+    //private final static int DEFSIZE = 16;
     //private int[] array;
     //private int size, head, tail;
     public Deque(int capacity){
@@ -10,7 +10,7 @@ public class Deque extends Queue{
     }
     //Вернуть индекс предыдущего за данным элемента.
     public int backward(int index) {
-        return --index > 0 ? index : tail;
+        return --index >= 0 ? index : size()-1;
     }
     //Добавить число в начало дека
     public void pushFront(int val) throws Exception{
@@ -18,7 +18,6 @@ public class Deque extends Queue{
             throw new Exception();
         array[head = backward(head)] = val;
     }
-
     //Получить последний элемент дека (не удаляя его).
     public int back() throws Exception {
         if(empty())
