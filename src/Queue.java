@@ -21,7 +21,7 @@ public abstract class Queue {
         tail = array.length - 1;
     }
     //Вернуть индекс следующего за данным элемента.
-    public int forward(int index) {
+    private int forward(int index) {
         return ++index < array.length ? index : 0;
     }
     //Добавить число в очередь (в конец).

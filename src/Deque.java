@@ -9,8 +9,12 @@ public class Deque extends Queue{
         super();
     }
     //Вернуть индекс предыдущего за данным элемента.
-    public int backward(int index) {
+    private int backward(int index) {
         return --index >= 0 ? index : size()-1;
+    }
+    //Добавить число в конец дека
+    public void pushBack(int val) throws Exception {
+        super.push(val);
     }
     //Добавить число в начало дека
     public void pushFront(int val) throws Exception{
@@ -23,6 +27,10 @@ public class Deque extends Queue{
         if(empty())
             throw new Exception();
         return array[tail];
+    }
+    //Удалить первый элемент дека
+    public int popFront() throws Exception{
+        return super.pop();
     }
     //Удалить последний элемент дека.
     public int popBack() throws Exception {
